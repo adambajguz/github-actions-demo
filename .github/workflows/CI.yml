@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    tags-ignore:
+      - '*'
+    paths-ignore:
+      - LICENSE
+      - 'CHANGELOG.md'
+      - 'README.md'
+  pull_request:
+    tags-ignore:
+      - '*'
+    paths-ignore:
+      - LICENSE
+      - 'CHANGELOG.md'
+      - 'README.md'
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.4.0
+
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v1.9.0
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Build & test
+      run: |
+        dotnet nuget update source PackSite --configfile ./src/NuGet.config -u ${{ secrets.GPR_OWNER }} -p ${{secrets.GPR_TOKEN }} --store-password-in-clear-text
+        dotnet test ./src/PackSite.Library.Crypto.sln --configuration Release
+
+    - name: Upload coverage
+      uses: codecov/codecov-action@v2.1.0
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./src/**/Coverage.xml
