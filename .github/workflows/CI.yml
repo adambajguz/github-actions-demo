@@ -38,7 +38,6 @@ jobs:
 
     - name: Build & test
       run: |
-        dotnet nuget update source PackSite --configfile ./src/NuGet.config -u ${{ secrets.GPR_OWNER }} -p ${{secrets.GPR_TOKEN }} --store-password-in-clear-text
         dotnet test ./src/PackSite.Library.Crypto.sln --configuration Release
 
     - name: Upload coverage
