@@ -12,9 +12,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflows", "Workflows", "{54449306-C4BA-4A88-8B47-B073E3663531}"
 	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\cd-github.yml = ..\.github\workflows\cd-github.yml
+		..\.github\workflows\ci-v0.yml = ..\.github\workflows\ci-v0.yml
 		..\.github\workflows\ci-v1.yml = ..\.github\workflows\ci-v1.yml
 		..\.github\workflows\ci-v2.yml = ..\.github\workflows\ci-v2.yml
 		..\.github\workflows\ci-v3.yml = ..\.github\workflows\ci-v3.yml
+		..\.github\workflows\ci-v4.yml = ..\.github\workflows\ci-v4.yml
+		..\.github\workflows\ci-v5.yml = ..\.github\workflows\ci-v5.yml
+		..\.github\workflows\delete-old-workflows.yml = ..\.github\workflows\delete-old-workflows.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{EECFD247-3A91-4408-9721-6314C28FB520}"

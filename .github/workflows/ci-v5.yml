@@ -14,7 +14,7 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }} # 1. Run on multiple operating systems
 
     strategy:
       matrix:
@@ -38,8 +38,8 @@ jobs:
     - name: Test
       run: dotnet test ./src/PackSite.Library.Crypto.sln --no-build --verbosity normal --filter "FullyQualifiedName!~.IntegrationTests" -- xunit.parallelizeAssembly=true
 
-    - name: Upload coverage # 1. Upload code coverage
+    - name: Upload coverage # 2. Upload code coverage
       uses: codecov/codecov-action@v3.1.1
       with:
-        token: ${{ secrets.CODECOV_TOKEN }} # 2. Secret usage
+        token: ${{ secrets.CODECOV_TOKEN }} # 3. Secret usage https://docs.github.com/en/actions/learn-github-actions/contexts
         files: ./src/**/Coverage.xml
