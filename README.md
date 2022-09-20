@@ -10,4 +10,8 @@
 
 ## Interesting links
 
+https://docs.github.com/en/actions
+
 https://github.com/Tyrrrz/.github
+
+https://github.com/settings/billing
