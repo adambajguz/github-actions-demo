@@ -1,4 +1,4 @@
-name: ci-v1 # https://docs.github.com/en/actions
+name: ci-v0 # https://docs.github.com/en/actions
 
 on: # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
   push:
