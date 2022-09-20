@@ -42,4 +42,4 @@ jobs:
       uses: codecov/codecov-action@v2.1.0 # @v3.1.1
       with:
         token: ${{ secrets.CODECOV_TOKEN }} # 3. Secret usage https://docs.github.com/en/actions/learn-github-actions/contexts
-        files: ./src/**/Coverage.xml
+        files: ./src/**/Coverage.xml # https://github.com/codecov/codecov-action/issues/830
