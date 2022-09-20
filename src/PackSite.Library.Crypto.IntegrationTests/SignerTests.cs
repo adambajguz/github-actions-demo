@@ -1,11 +1,11 @@
-namespace PackSite.Library.Crypto.Tests
+namespace PackSite.Library.Crypto.IntegrationTests
 {
     using System;
     using System.Security.Cryptography.X509Certificates;
     using System.Text;
     using FluentAssertions;
     using Microsoft.Extensions.DependencyInjection;
-    using PackSite.Library.Crypto.Tests.Data;
+    using PackSite.Library.Crypto.IntegrationTests.Data;
     using Xunit;
 
     public class SignerTests
