@@ -12,9 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflows", "Workflows", "{54449306-C4BA-4A88-8B47-B073E3663531}"
 	ProjectSection(SolutionItems) = preProject
-		..\.github\workflows\CD-GitHub.yml = ..\.github\workflows\CD-GitHub.yml
-		..\.github\workflows\CD-NuGet.yml = ..\.github\workflows\CD-NuGet.yml
-		..\.github\workflows\CI.yml = ..\.github\workflows\CI.yml
+		..\.github\workflows\ci-v1.yml = ..\.github\workflows\ci-v1.yml
+		..\.github\workflows\ci-v2.yml = ..\.github\workflows\ci-v2.yml
+		..\.github\workflows\ci-v3.yml = ..\.github\workflows\ci-v3.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{EECFD247-3A91-4408-9721-6314C28FB520}"
@@ -30,6 +30,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackSite.Library.Crypto", "PackSite.Library.Crypto\PackSite.Library.Crypto.csproj", "{4B3D1900-7C4A-4C07-A2C6-B38FDC8A62C9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackSite.Library.Crypto.Tests", "PackSite.Library.Crypto.Tests\PackSite.Library.Crypto.Tests.csproj", "{6D846361-A168-43BD-BC2A-8E5569FB03EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackSite.Library.Crypto.IntegrationTests", "PackSite.Library.Crypto.IntegrationTests\PackSite.Library.Crypto.IntegrationTests.csproj", "{CC853233-02F5-4037-AB36-24024C69E94C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,18 @@ Global
 		{6D846361-A168-43BD-BC2A-8E5569FB03EF}.Release|x64.Build.0 = Release|x64
 		{6D846361-A168-43BD-BC2A-8E5569FB03EF}.Release|x86.ActiveCfg = Release|x86
 		{6D846361-A168-43BD-BC2A-8E5569FB03EF}.Release|x86.Build.0 = Release|x86
+		{CC853233-02F5-4037-AB36-24024C69E94C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC853233-02F5-4037-AB36-24024C69E94C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC853233-02F5-4037-AB36-24024C69E94C}.Debug|x64.ActiveCfg = Debug|x64
+		{CC853233-02F5-4037-AB36-24024C69E94C}.Debug|x64.Build.0 = Debug|x64
+		{CC853233-02F5-4037-AB36-24024C69E94C}.Debug|x86.ActiveCfg = Debug|x86
+		{CC853233-02F5-4037-AB36-24024C69E94C}.Debug|x86.Build.0 = Debug|x86
+		{CC853233-02F5-4037-AB36-24024C69E94C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC853233-02F5-4037-AB36-24024C69E94C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC853233-02F5-4037-AB36-24024C69E94C}.Release|x64.ActiveCfg = Release|x64
+		{CC853233-02F5-4037-AB36-24024C69E94C}.Release|x64.Build.0 = Release|x64
+		{CC853233-02F5-4037-AB36-24024C69E94C}.Release|x86.ActiveCfg = Release|x86
+		{CC853233-02F5-4037-AB36-24024C69E94C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +87,7 @@ Global
 		{54449306-C4BA-4A88-8B47-B073E3663531} = {5A0C3D1D-42E3-4A2F-87BC-9CF76DA7B01C}
 		{4B3D1900-7C4A-4C07-A2C6-B38FDC8A62C9} = {EECFD247-3A91-4408-9721-6314C28FB520}
 		{6D846361-A168-43BD-BC2A-8E5569FB03EF} = {71E1788A-6A34-42A4-9501-698B7EF41A37}
+		{CC853233-02F5-4037-AB36-24024C69E94C} = {71E1788A-6A34-42A4-9501-698B7EF41A37}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {34B3A2A4-BA14-4935-B5A5-FD8EDC258B77}

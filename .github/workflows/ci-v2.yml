@@ -1,0 +1,29 @@
+name: ci-v2
+
+on:
+  push:
+    branches: [ main ]
+    tags-ignore:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3.0.2 # 1. Specific version
+
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v2.1.0 # 1. Specific version
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Restore dependencies # 2. Fine-grained build
+      run: dotnet restore ./src/PackSite.Library.Crypto.sln
+
+    - name: Build # 2. Fine-grained build
+      run: dotnet build ./src/PackSite.Library.Crypto.sln --no-restore
+
+    - name: Test # 2. Fine-grained build
+      run: dotnet test ./src/PackSite.Library.Crypto.sln --no-build --verbosity normal --filter "FullyQualifiedName!~.IntegrationTests" -- xunit.parallelizeAssembly=true

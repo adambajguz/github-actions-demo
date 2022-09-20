@@ -1,0 +1,35 @@
+name: ci-v3
+
+on:
+  push:
+    branches: # 1. Different syntax https://www.educative.io/courses/introduction-to-yaml/N881Nq9pVY8
+      - main
+      - develop
+    tags-ignore:
+      - '*'
+    paths-ignore: # 2 Don't run on changes to these paths/files
+      - LICENSE
+      - 'CHANGELOG.md'
+      - 'README.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3.0.2
+
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v2.1.0
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore ./src/PackSite.Library.Crypto.sln
+
+    - name: Build
+      run: dotnet build ./src/PackSite.Library.Crypto.sln --no-restore
+
+    - name: Test
+      run: dotnet test ./src/PackSite.Library.Crypto.sln --no-build --verbosity normal --filter "FullyQualifiedName!~.IntegrationTests" -- xunit.parallelizeAssembly=true

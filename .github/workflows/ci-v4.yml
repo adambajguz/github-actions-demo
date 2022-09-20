@@ -1,0 +1,36 @@
+name: ci-v4
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    tags-ignore:
+      - '*'
+    paths-ignore:
+      - LICENSE
+      - 'CHANGELOG.md'
+      - 'README.md'
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }} # 1. Run on multiple operating systems
+
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.4.0
+
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v2.1.0
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Build & test # 2. Run multiple commands
+      run: |
+        echo ${{ GITHUB_ACTION_REPOSITORY }} # https://docs.github.com/en/actions/learn-github-actions/environment-variables
+        ls -la
+        dotnet test ./src/PackSite.Library.Crypto.sln --configuration Release
