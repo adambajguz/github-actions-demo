@@ -3,9 +3,9 @@ namespace Crypto.Tests
     using System;
     using System.IO;
     using System.Text;
+    using Crypto.Extensions;
     using FluentAssertions;
     using Microsoft.Extensions.DependencyInjection;
-    using Crypto.Extensions;
     using Xunit;
 
     public class HasherTests

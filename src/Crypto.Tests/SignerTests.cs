@@ -3,9 +3,9 @@ namespace Crypto.Tests
     using System;
     using System.Security.Cryptography.X509Certificates;
     using System.Text;
+    using Crypto.Tests.Data;
     using FluentAssertions;
     using Microsoft.Extensions.DependencyInjection;
-    using Crypto.Tests.Data;
     using Xunit;
 
     public class SignerTests
