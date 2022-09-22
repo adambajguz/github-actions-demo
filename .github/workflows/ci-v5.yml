@@ -11,6 +11,13 @@ on:
       - LICENSE
       - 'CHANGELOG.md'
       - 'README.md'
+  pull_request:
+    tags-ignore:
+      - '*'
+    paths-ignore:
+      - LICENSE
+      - 'CHANGELOG.md'
+      - 'README.md'
 
 jobs:
   build:
