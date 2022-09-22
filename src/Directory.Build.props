@@ -1,8 +1,14 @@
 <Project>
 
 	<PropertyGroup>
-		<Version Condition="'$(CI)' != 'true'">1.0.0</Version>
-		<Version Condition="'$(CI)' == 'true'">$(GITHUB_REF_NAME)</Version>
+		<Choose>
+			<When Condition="'$(CI)' == 'true' And '$(CD)' == 'true'">
+				<Version>$(GITHUB_REF_NAME)</Version>
+			</When>
+			<Otherwise>
+				<Version>1.0.0</Version>
+			</Otherwise>
+		</Choose>
 	</PropertyGroup>
 
 	<PropertyGroup>
