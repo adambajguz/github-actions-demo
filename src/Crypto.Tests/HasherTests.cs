@@ -1,11 +1,11 @@
-namespace PackSite.Library.Crypto.Tests
+namespace Crypto.Tests
 {
     using System;
     using System.IO;
     using System.Text;
     using FluentAssertions;
     using Microsoft.Extensions.DependencyInjection;
-    using PackSite.Library.Crypto.Extensions;
+    using Crypto.Extensions;
     using Xunit;
 
     public class HasherTests

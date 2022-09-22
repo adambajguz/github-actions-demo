@@ -23,8 +23,8 @@ jobs:
 
     - name: Pack
       run: | # https://devblogs.microsoft.com/dotnet/producing-packages-with-source-link/#deterministic-builds
-        dotnet pack src/PackSite.Library.Crypto.sln --configuration Release -p:ContinuousIntegrationBuild=true
+        dotnet pack src/Crypto.sln --configuration Release -p:ContinuousIntegrationBuild=true
 
     - name: Deploy to GitHub Package Registry
       run: |
-        dotnet nuget push src/PackSite.Library.Crypto/bin/Release/*.nupkg -k ${{ secrets.GITHUB_TOKEN }}
+        dotnet nuget push src/Crypto/bin/Release/*.nupkg -k ${{ secrets.GITHUB_TOKEN }}

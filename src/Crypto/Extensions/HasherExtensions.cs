@@ -1,4 +1,4 @@
-﻿namespace PackSite.Library.Crypto.Extensions
+﻿namespace Crypto.Extensions
 {
     using System.Text;
 

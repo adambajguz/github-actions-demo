@@ -19,4 +19,4 @@ jobs:
 
     - name: Build & test
       run: |
-        dotnet test ./src/PackSite.Library.Crypto.sln --configuration Release  -- xunit.parallelizeAssembly=true
+        dotnet test ./src/Crypto.sln --configuration Release  -- xunit.parallelizeAssembly=true

@@ -1,4 +1,4 @@
-namespace PackSite.Library.Crypto.Tests.Data
+namespace Crypto.Tests.Data
 {
     internal static class TestCertificates
     {

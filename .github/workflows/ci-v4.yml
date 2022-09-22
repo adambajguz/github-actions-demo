@@ -29,4 +29,4 @@ jobs:
       run: |
         echo ${{ env.GITHUB_ACTION_REPOSITORY }} # https://docs.github.com/en/actions/learn-github-actions/environment-variables
         ls -la
-        dotnet test ./src/PackSite.Library.Crypto.sln --configuration Release
+        dotnet test ./src/Crypto.sln --configuration Release

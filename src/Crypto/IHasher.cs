@@ -1,4 +1,4 @@
-﻿namespace PackSite.Library.Crypto
+﻿namespace Crypto
 {
     using System.IO;
 

@@ -30,13 +30,13 @@ jobs:
         dotnet-version: '6.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore ./src/PackSite.Library.Crypto.sln
+      run: dotnet restore ./src/Crypto.sln
 
     - name: Build
-      run: dotnet build ./src/PackSite.Library.Crypto.sln --no-restore
+      run: dotnet build ./src/Crypto.sln --no-restore
 
     - name: Test
-      run: dotnet test ./src/PackSite.Library.Crypto.sln --no-build --verbosity normal --filter "FullyQualifiedName!~.IntegrationTests" -- xunit.parallelizeAssembly=true
+      run: dotnet test ./src/Crypto.sln --no-build --verbosity normal --filter "FullyQualifiedName!~.IntegrationTests" -- xunit.parallelizeAssembly=true
 
     - name: Upload coverage # 2. Upload code coverage
       uses: codecov/codecov-action@v2.1.0 # @v3.1.1

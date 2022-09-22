@@ -1,4 +1,4 @@
-﻿namespace PackSite.Library.Crypto
+﻿namespace Crypto
 {
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.DependencyInjection.Extensions;
